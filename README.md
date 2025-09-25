@@ -57,7 +57,7 @@ Example (see `./data/EXAMPLE_EXCEL.xlsx`): COLUMN NAME, DATA TYPE, PK, NULL, DEF
 This section has two sub frames:
 
 #### a) Format
-![Output options](documentation/screenshots/output_format.png)
+![Output format](documentation/screenshots/output_format.png)
 
 - **JSON** — writes `tables.json` containing all parsed tables.  
 - **CSV** — writes one CSV per table into `out/.../csv/`.  
@@ -65,7 +65,7 @@ This section has two sub frames:
 - **Stop on empty row** — if enabled, the parser stops a table at the first empty row within the header span.
 
 #### b) Directory
-![Output options](documentation/screenshots/output_dir.png)
+![Output directory](documentation/screenshots/output_dir.png)
 
 Choose where to write `json/`, `csv/`, and `sql/`.
 
@@ -136,3 +136,21 @@ python app_gui.py
 - Detection assumes headers are contiguous and in a single row.
 - Stops at the first empty row within the header span (if enabled).
 - Does not infer data types from sample values—relies on the Excel DATA TYPE column.
+
+---
+
+## SQL TRANSLATION INFOS
+
+The sql transaltion works only when the pattern follows the example on the table below:
+![Translatable table](documentation/screenshots/sql_transl_table.png)
+
+When the pattern comprehend the following list:
+
+```Python
+# header pattern (obv editable on excel and on this app gui)
+HeaderPattern = ["COLUMN NAME", "DATA TYPE", "PK", "NULLABLE", "DEFAULT", "DESCRIPTION"]  
+```
+
+the application is enabled to translate correctly the table into an sql statement ready to create the
+database table. The description records are set as comments, the double primary key is considered as 
+a single construct.
