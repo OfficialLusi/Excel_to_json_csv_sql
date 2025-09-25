@@ -18,8 +18,8 @@ Tables are detected by a **header pattern** you define in the UI.
   - **SQL (DDL)**: one file per table (+ `_ALL_TABLES.sql`) with `CREATE TABLE`, `PRIMARY KEY`, and `COMMENT` statements.
 - Assign an **Oracle schema per sheet** (or use a default) for the SQL.
 
-> **Requirements & Python version**  
-> Check `.python-version` and `requirements.txt`.
+**Requirements & Python version**  
+Check `.python-version` and `requirements.txt`.
 
 ---
 
@@ -53,6 +53,9 @@ Example (see `./data/EXAMPLE_EXCEL.xlsx`): COLUMN NAME, DATA TYPE, PK, NULL, DEF
 
 
 ### 3) Output
+This section has two sub frames:
+
+#### a) Format
 ![Output options](documentation/screenshots/output.png)
 
 - **JSON** — writes `tables.json` containing all parsed tables.  
@@ -60,16 +63,18 @@ Example (see `./data/EXAMPLE_EXCEL.xlsx`): COLUMN NAME, DATA TYPE, PK, NULL, DEF
 - **SQL (DDL)** — writes one `.sql` per table into `out/.../sql/` and `_ALL_TABLES.sql`.  
 - **Stop on empty row** — if enabled, the parser stops a table at the first empty row within the header span.
 
-### 4) Output directory
+#### b) Directory
+![Output options](documentation/screenshots/output_dir.png)
+
 Choose where to write `json/`, `csv/`, and `sql/`.
 
-### 5) Sheets & Schemas
+### 4) Sheets & Schemas
 ![Sheets & Schemas](documentation/screenshots/sheets&schemas.png)
 
 - **List of sheets** — select the sheets to process (none selected = **all** sheets).  
 - **Schema per sheet** — optional text field for each sheet. The app builds a map `{sheet → schema}`; blank entries use the first non-blank schema you typed, or fallback `MYSCHEMA`.
 
-### 6) Run / Quit
+### 5) Run / Quit
 ![Run & Quit](documentation/screenshots/quit&run.png)
 
 - **Run** — launches parsing and exports according to your selections.  
