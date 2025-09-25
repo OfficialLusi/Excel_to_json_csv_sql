@@ -53,10 +53,11 @@ Example (see `./data/EXAMPLE_EXCEL.xlsx`): COLUMN NAME, DATA TYPE, PK, NULL, DEF
 
 
 ### 3) Output
+![Output options](documentation/screenshots/output.png)
 This section has two sub frames:
 
 #### a) Format
-![Output options](documentation/screenshots/output.png)
+![Output options](documentation/screenshots/output_format.png)
 
 - **JSON** — writes `tables.json` containing all parsed tables.  
 - **CSV** — writes one CSV per table into `out/.../csv/`.  
