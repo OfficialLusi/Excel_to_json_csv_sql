@@ -1,0 +1,26 @@
+activate virtual environment
+.\.venv\Scripts\Activate.ps1
+
+update pip + install dependencies (es)
+python -m pip install --upgrade pip
+pip install pandas openpyxl oracledb sqlalchemy jinja2
+
+save dependencies
+pip freeze > requirements.txt
+
+launch
+python excel_to_oracle.py
+
+deactive
+deactivate
+
+opt structure
+excel2oracle/
+├─ .venv/                 # virtual env (dont commit)
+├─ data/                  # xlsx sources
+├─ out_sql/               # .sql generated
+├─ excel_to_oracle.py     # script
+├─ requirements.txt
+├─ .gitignore
+└─ README.md
+

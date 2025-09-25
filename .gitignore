@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual env
+.venv/
+venv/
+
+# IDE/Editor
+.vscode/
+.idea/
+
+# Output
+out/
+*.log
+
+# Local data
+data/
+out/  
